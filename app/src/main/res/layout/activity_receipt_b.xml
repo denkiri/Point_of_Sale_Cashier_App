@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".ReceiptActivityB">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/Theme.MyFancyTheme"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                >
+
+                <TextView
+                    android:id="@+id/txt"
+                    android:layout_width="wrap_content"
+                    android:padding="10dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="Receipt"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </FrameLayout>
+</RelativeLayout>

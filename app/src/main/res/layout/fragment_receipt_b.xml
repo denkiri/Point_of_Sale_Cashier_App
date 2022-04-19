@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".receipt.ui.mreceipt.ReceiptFragmentB">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="70dp"
+            android:id="@+id/main">
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:minHeight="4dp"
+                android:padding="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_marginTop="50dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/avi"
+            android:padding="12dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:id="@+id/refresh"
+            android:textStyle="italic"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:textColor="@color/colorCost"
+            android:layout_above="@id/print"
+            android:text="@string/swipe_down_to_refresh"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/print"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+            android:text="Print Receipt"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAppearance="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/purple_500"
+            app:cornerRadius="5dp"
+            app:rippleColor="@color/colorPrimary"
+            />
+    </RelativeLayout>
+</LinearLayout>

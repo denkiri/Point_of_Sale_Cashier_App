@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home.SalesFragment">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/itemsswipetorefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/main"
+                >
+                <com.mancj.materialsearchbar.MaterialSearchBar
+                    app:mt_speechMode="true"
+                    app:mt_hint="Search by Invoice Number"
+                    android:layout_below="@id/card_view_b"
+                    app:theme="@style/AppTheme.PopupOverlay"
+                    app:mt_maxSuggestionsCount="5"
+                    android:layout_width="match_parent"
+                    app:queryHint="Search by product name"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/searchView"
+                    />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:shapeAppearance="@color/white"
+                    android:clipToPadding="false"
+                    android:backgroundTint="@color/white"
+                    android:background="@color/white"
+                    android:clipChildren="false"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="4dp"
+                    android:elevation="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_below="@+id/searchView"
+                        android:id="@+id/sales"
+                        android:gravity="center_horizontal"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:text="Recent Sales"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorAccent"
+                        tools:ignore="RtlHardcoded" />
+
+                </androidx.cardview.widget.CardView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/recyclerView"
+                    android:layout_below="@id/searchView"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:layout_marginBottom="16dp"
+                    android:scrollbars="vertical"
+                    />
+            </RelativeLayout>
+            <ProgressBar
+                android:id="@+id/avi"
+                android:padding="12dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+            <LinearLayout
+                android:id="@+id/empty_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:visibility="gone">
+                <ImageView
+                    android:id="@+id/empty_icon"
+                    android:visibility="invisible"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_baseline_signal_wifi_off_24" />
+
+                <TextView
+                    android:id="@+id/empty_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/empty_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="28dp"
+                    android:gravity="center"
+                    android:text="Oops,something went wrong. Please try again Later" />
+
+                <Button
+                    android:id="@+id/empty_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="28dp"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/try_again" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

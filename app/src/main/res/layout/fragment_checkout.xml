@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="20dp"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    tools:context=".home.CheckoutFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        <RelativeLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cancel"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_baseline_cancel_24"
+                android:layout_alignParentEnd="true" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/paymentMode"
+                android:layout_width="wrap_content"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/quantityLeft"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="Payment Mode:"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorAccent"
+                android:layout_toStartOf="@id/quantityLeft" />
+            <TextView
+                android:id="@+id/paymentModeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:padding="5dp"
+                android:gravity="right"
+                android:text="Cash"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorAccent"
+                android:layout_alignParentStart="true" />
+
+            </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_below="@+id/cancel"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:hint="Enter Mobile Number"
+        android:id="@+id/mobile"
+        android:textColor="@color/black"
+        android:inputType="phone"
+        android:background="@drawable/rounded_edittext"
+      />
+            <TextView
+                android:id="@+id/customerSelected"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_below="@id/mobile"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:text="Select Customer"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_below="@id/customerSelected"
+    android:id="@+id/layoutD"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/mainB"
+       >
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        app:mt_speechMode="true"
+        app:mt_hint="Search by Customer Name"
+        app:theme="@style/AppTheme.PopupOverlay"
+        app:mt_maxSuggestionsCount="5"
+        android:layout_width="match_parent"
+        app:queryHint="Search by product name"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView"
+        />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_below="@id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:scrollbars="vertical" />
+    </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/empty_layoutB"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:visibility="invisible">
+                <TextView
+                    android:id="@+id/empty_textB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/oops_something_went_wrong_please_try_again_later" />
+                <ImageView
+                    android:id="@+id/empty_iconB"
+                    android:visibility="visible"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/ic_baseline_refresh_24" />
+
+
+            </LinearLayout>
+</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/dueDate"
+                android:layout_below="@id/layoutD"
+                android:textColor="@color/black"
+                android:text="Due Date"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:id="@+id/layoutC"
+                android:layout_below="@id/dueDate"
+                android:layout_height="wrap_content"
+
+                >
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="00-00-0000" />
+                <Button
+                    android:id="@+id/btSelectDate"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:text="Select Date"/>
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/save"
+                android:layout_below="@+id/layoutC"
+                android:layout_marginTop="10dp"
+                android:text="Save"
+                android:gravity="center"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_gravity="end"
+                android:textAppearance="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textColor="@color/white"
+                android:layout_marginBottom="60dp"
+                android:textSize="16.5sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/colorAccent"
+                app:cornerRadius="5dp"
+                app:rippleColor="@color/colorPrimary"
+
+                />
+
+
+        </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+        <ProgressBar
+            android:id="@+id/avi"
+            android:padding="12dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+        <LinearLayout
+            android:id="@+id/empty_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/empty_icon"
+                android:visibility="invisible"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_baseline_signal_wifi_off_24" />
+
+            <TextView
+                android:id="@+id/empty_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/empty_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="28dp"
+                android:gravity="center"
+                android:text="Oops,something went wrong. Please try again Later" />
+
+            <Button
+                android:id="@+id/empty_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="28dp"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/try_again" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

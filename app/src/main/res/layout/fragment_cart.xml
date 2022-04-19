@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home.CartFragment">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/itemsswipetorefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            android:layout_alignParentStart="true"
+            android:id="@+id/navigation"
+            android:background="@color/colorPrimary"
+
+            android:layout_alignParentLeft="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:text="Cart"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/back"
+                android:src="@drawable/ic_arrow_back_white_24dp"
+                android:padding="10dp"
+                android:backgroundTint="@color/white"
+                />
+        </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="0.9"
+                    android:orientation="vertical"
+                    android:id="@+id/layoutB"
+                    >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:id="@+id/recyclerView"
+                        android:layout_weight=".80"
+                        android:layout_height="0dp"
+                        android:clipToPadding="false"
+                        android:scrollbars="vertical"
+                        />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/totalItems"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            android:layout_toLeftOf="@id/quantityLeft"
+                            android:textStyle="bold"
+                            android:text="Total Items"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorAccent"
+                            android:layout_toStartOf="@id/quantityLeft" />
+                        <TextView
+                            android:id="@+id/totalItemsValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:textSize="12sp"
+                            android:gravity="right"
+                            android:text="@string/_0"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorAccent"
+                            android:layout_alignParentStart="true" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/totalAmount"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:paddingStart="5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@id/quantityLeft"
+                            android:textStyle="bold"
+                            android:text="Total amount"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            android:textColor="@color/purple_500"
+                            android:layout_toStartOf="@id/quantityLeft" />
+                        <TextView
+                            android:id="@+id/totalAmountValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:paddingStart="10dp"
+                            android:textSize="12sp"
+                            android:gravity="right"
+                            android:text="@string/_0ksh"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            android:textColor="@color/purple_500"
+                            android:layout_alignParentStart="true" />
+                    </LinearLayout>
+                    </RelativeLayout>
+                    <RadioGroup
+                        android:id="@+id/radioPaymentType"
+                        android:padding="5dp"
+                        android:layout_weight=".10"
+                        android:layout_marginBottom="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioCash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:checked="true"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:text="@string/cash" />
+
+
+                        <RadioButton
+                            android:id="@+id/radioMpesa"
+                            android:padding="5dp"
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text="@string/mpesa" />
+                        <RadioButton
+                            android:id="@+id/radioCredit"
+                            android:padding="5dp"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text="@string/credit" />
+
+                    </RadioGroup>
+                </LinearLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCheckOut"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="3dp"
+                    android:paddingTop="5dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/save_receipt"
+                    android:textAppearance="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="16.5sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/colorAccent"
+                    app:cornerRadius="5dp"
+                    app:rippleColor="@color/colorPrimary"
+
+
+                    />
+            </RelativeLayout>
+            <ProgressBar
+                android:id="@+id/avi"
+                android:padding="12dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+            <LinearLayout
+                android:id="@+id/empty_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/navigation"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/empty_icon"
+                    android:visibility="invisible"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_baseline_signal_wifi_off_24" />
+
+                <TextView
+                    android:id="@+id/empty_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/empty_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="28dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="28dp"
+                    android:gravity="center"
+                    android:text="Oops,something went wrong. Please try again Later" />
+
+                <Button
+                    android:id="@+id/empty_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="28dp"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/try_again" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/empty_layoutB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:layout_below="@id/navigation"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/empty_iconB"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_baseline_add_24" />
+
+            <TextView
+                android:id="@+id/empty_textB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="28dp"
+                android:gravity="center"
+                android:text="@string/add_items_to_cart" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>
