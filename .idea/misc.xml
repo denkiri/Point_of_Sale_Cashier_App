@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SOK/Documents/pos_cashier/app/src/main/res/layout/fragment_receipt.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/SOK/Documents/pos_cashier/app/src/main/res/layout/home_fragment.xml" value="0.26875" />
         <entry key="..\:/Users/SOK/Documents/pos_cashier/app/src/main/res/layout/login_fragment.xml" value="0.15806159420289856" />
       </map>
     </option>

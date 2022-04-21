@@ -72,7 +72,7 @@
         <item name="colorControlActivated">#000000</item>
     </style>
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/backgroud</item>
+       <!-- <item name="android:windowBackground">@drawable/backgroud</item>-->
     </style>
 
     <style name="SpinnerDatePickerDialog" parent="@android:style/Theme.Holo.Light.Dialog">

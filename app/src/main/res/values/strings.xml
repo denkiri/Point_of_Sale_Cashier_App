@@ -28,6 +28,7 @@
     <string name="_0ksh">0Ksh</string>
     <string name="oops_something_went_wrong_please_try_again_later">Oops,something went wrong. Please try again Later</string>
     <string name="swipe_down_to_refresh">Click to Refresh</string>
+    <string name="swipe_down_to_refresh_a">swipe down to Refresh</string>
     <string name="add_items_to_cart">Add Items to Receipt</string>
     <string name="no_pending_mpesa_transactions">No Pending Mpesa Transactions</string>
     <string name="guest">guest</string>
