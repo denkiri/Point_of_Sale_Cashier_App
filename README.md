@@ -1,5 +1,5 @@
 # Point_of_Sale_Cashier_App
-This app is a great replacement for a cash register, track sales and inventory.
+Point of Sale Cashier app is used by cashiers to make sales(cash sale, credit sale and mpesa sale). The app displays a product catalogue and generates Receipts for products sold. App support Bluetooth POS printer.
 # App Screenshots
 <img src="https://user-images.githubusercontent.com/33983388/164479286-e83abd39-b8c6-459c-87f2-9647da75252e.png" width="340" height="540">|<img src="https://user-images.githubusercontent.com/33983388/164479289-1098cd76-7864-42c3-b42d-21573a79d79e.png" width="340" height="540">
 <img src="https://user-images.githubusercontent.com/33983388/164479255-267254f3-cef0-4cfc-9757-45e0cb0932eb.png" width="340" height="540">|<img src="https://user-images.githubusercontent.com/33983388/164479272-4f9b5476-2861-4e16-b185-0d050ad9563c.png" width="340" height="540">
